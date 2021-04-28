@@ -1,8 +1,15 @@
 Package: riskviewer
-Title: riskviewer - Show risks and probability in real world contexts
-Version: 0.0.0.9000
-Authors@R: person('Giorgio', 'Comai', email = 'g@giorgiocomai.eu', role = c('cre', 'aut'))
-Description: riskviewer - Show risks and probability in real world contexts
+Title: A modern implementation of the Risk Characterisation Theatre
+Version: 0.0.0.9001
+Authors@R: 
+    c(person(given = "Giorgio",
+             family = "Comai",
+             role = c("aut", "cre", "cph"),
+             email = "g@giorgiocomai.eu",
+             comment = c(ORCID = "0000-0002-0515-9542")), 
+      person(given = "EDJNet",
+             role = "fnd"))
+Description: Show risks and probability in real world contexts.
 License: GPL (>= 3)
 Imports: 
     config,
