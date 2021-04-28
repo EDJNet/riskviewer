@@ -22,7 +22,7 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             value = 20,
                             min = 0,
                             max = 100,
-                            step = 1,
+                            step = 0.1,
                             post = "%",
                             fgColor = "#ff7256"),
     
@@ -31,7 +31,7 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             value = 5,
                             min = 0,
                             max = 100,
-                            step = 1,
+                            step = 0.1,
                             post = "%",
                             fgColor = "#008b8b"),
     
@@ -40,7 +40,7 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             value = 0,
                             min = 0,
                             max = 100,
-                            step = 1,
+                            step = 0.1,
                             post = "%",
                             fgColor = "#ffb90f")
   )
