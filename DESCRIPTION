@@ -27,6 +27,6 @@ Suggests:
     rmarkdown,
     knitr,
     testthat
-URL: https://github.com/giocomai/riskviewer
+URL: https://edjnet.github.io/riskviewer, https://github.com/giocomai/riskviewer
 BugReports: https://github.com/giocomai/riskviewer/issues
 VignetteBuilder: knitr
