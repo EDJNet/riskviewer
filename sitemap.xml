@@ -7,9 +7,6 @@
     <loc>https://edjnet.github.io/riskviewer/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/run_app.html</loc>
-  </url>
-  <url>
     <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane.html</loc>
   </url>
   <url>
@@ -29,6 +26,9 @@
   </url>
   <url>
     <loc>https://edjnet.github.io/riskviewer/reference/rv_create_risk_vector.html</loc>
+  </url>
+  <url>
+    <loc>https://edjnet.github.io/riskviewer/reference/rv_explorer.html</loc>
   </url>
   <url>
     <loc>https://edjnet.github.io/riskviewer/reference/rv_img.html</loc>
