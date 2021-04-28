@@ -11,7 +11,7 @@ rv_create_airplane_animation(
   state_length = 1,
   risk_places = NULL,
   risk_vector = NULL,
-  risk_name = "Risk",
+  risk_names = NULL,
   fill = c("coral1", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
   na_colour = "grey80",
   rows = 33,
@@ -36,7 +36,7 @@ rv_create_airplane_animation(
 
 \item{risk_vector}{}
 
-\item{risk_name}{}
+\item{risk_names}{}
 
 \item{fill}{}
 

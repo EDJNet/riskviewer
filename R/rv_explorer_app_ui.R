@@ -8,6 +8,16 @@ rv_explorer_app_ui <- function(request) {
   tagList(
     
     golem_add_external_resources(),
+    HTML("<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src='https://www.googletagmanager.com/gtag/js?id=UA-109815904-1'></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-109815904-1');
+    </script>
+      "),
     tags$style("h3 a {color: #6f2c91;}"),
     tags$style("p a {color: #6f2c91;}"),
     tags$style("h3 a:hover {color: #a6ce39;}"),

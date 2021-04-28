@@ -8,11 +8,11 @@ rv_create_risk_vector(
   risk_ratio,
   total_places,
   risk_places = NULL,
-  risk_name = "Risk"
+  risk_names = NULL
 )
 }
 \arguments{
-\item{risk_ratio}{A numeic vector or a data frame with two columns, `Risk` and `Ratio`}
+\item{risk_ratio}{A numeric vector or a data frame with two columns, `Risk` and `Ratio`}
 
 \item{total_places}{Numeric. Gives the total length of the output vector.}
 

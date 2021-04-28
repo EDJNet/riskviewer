@@ -1,6 +1,6 @@
 #' Create risk vector based on ratio, number of places, or data frame
 #'
-#' @param risk_ratio A numeic vector or a data frame with two columns, `Risk` and `Ratio`
+#' @param risk_ratio A numeric vector or a data frame with two columns, `Risk` and `Ratio`
 #' @param risk_places A numeric vector or a data frame with two columns, `Risk` and `Places`
 #' @param risk_name If a numeric vector given in previous parameters, defines the name of the risk.
 #' @param total_places Numeric. Gives the total length of the output vector. 
@@ -32,21 +32,40 @@
 #' 
 #' 
 
- 
+
 rv_create_risk_vector <- function(risk_ratio,
                                   total_places,
                                   risk_places = NULL,
-                                  risk_name = "Risk"
-                                  ) {
+                                  risk_names = NULL
+) {
   
-  if (is.null(risk_places)==TRUE) {
+  if (is.null(risk_places)) {
     if (is.numeric(risk_ratio)==TRUE) {
-      risk_ratio = tibble::tibble(Risk = stringr::str_c(risk_name, " ", seq_along(risk_ratio)),
-                             Ratio = risk_ratio)
+      
+      if (is.null(risk_names)) {
+        risk_names <- stringr::str_c(risk_names, " ", seq_along(risk_ratio))
+        risk_ratio <- tibble::tibble(Risk = risk_names,
+                                     Ratio = risk_ratio)
+      } else if (length(risk_names)==length(risk_ratio)) {
+        risk_ratio <- tibble::tibble(Risk = risk_names,
+                                     Ratio = risk_ratio)
+      } else {
+        risk_names <- stringr::str_c(risk_names[1], " ", seq_along(risk_ratio))
+        risk_ratio <- tibble::tibble(Risk = risk_names,
+                                     Ratio = risk_ratio)
+      }
+      
+    } else {
+      risk_names <-  risk_ratio %>%
+        dplyr::filter(is.na(Risk)==FALSE) %>% 
+        dplyr::pull(Risk) %>%
+        unique()
     }
+    
     total_ratio <- risk_ratio %>%
       dplyr::pull(2) %>%
       sum()
+    
     if (total_ratio>1) {
       usethis::ui_stop("The sum of all elements of risk cannot be more than 1.")
     } else if (total_ratio==1) {
@@ -57,6 +76,7 @@ rv_create_risk_vector <- function(risk_ratio,
                        Ratio = 1-total_ratio)
     }
     risk_places_v <- rep(as.character(NA), total_places)
+    
     for (i in (unique(risk_ratio[[1]])[is.na(unique(risk_ratio[[1]]))==FALSE])) {
       
       selector <- sample(x = seq_along(risk_places_v[is.na(risk_places_v)==TRUE]),
@@ -92,8 +112,11 @@ rv_create_risk_vector <- function(risk_ratio,
       
       risk_places_v[is.na(risk_places_v)][selector] <- i
     }
-    
   }
   
-  risk_places_v
+  
+  if (is.factor(risk_places_v)==FALSE) {
+    risk_places_v <- factor(x = risk_places_v, levels = risk_names)
+  }
+  
 }

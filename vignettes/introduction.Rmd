@@ -150,7 +150,7 @@ rv_create_airplane_combo(number_of_planes = 10,
                          legend_position = "top",
                          ncol = 5,
                          nrow = 2,
-                         levels = c("Hospitalisation", "Death")) +
+                         risk_names = c("Hospitalisation", "Death")) +
   patchwork::plot_annotation(
 title = paste("Estimated covid-19 risk if diagnosed in the United States\nfor a male aged 45 without other underlying medical conditions"),
   subtitle = expression(paste("Based on ", italic("The Economist"), "'s covid-19 risk estimator")),

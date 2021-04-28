@@ -61,10 +61,17 @@ mod_rv_create_airplane_compact_server <- function(id){
                       "Risk 2", input$risk_02_ratio/100,
                       "Risk 3", input$risk_03_ratio/100) %>% 
       rv_create_airplane_combo(number_of_planes = as.numeric(input$airplanes_number),
-                               compact = TRUE, nrow = 2, ncol = 5)
+                               compact = TRUE,
+                               nrow = 2,
+                               ncol = 5)
     }, res = 96, height = 1024)  %>% 
-      shiny::bindCache(list(input$risk_01_ratio, input$risk_02_ratio, input$risk_03_ratio, input$airplanes_number),
-                       sizePolicy = sizeGrowthRatio(width = 1024, height = 1024, growthRate = 1))
+      shiny::bindCache(list(input$risk_01_ratio,
+                            input$risk_02_ratio,
+                            input$risk_03_ratio,
+                            input$airplanes_number),
+                       sizePolicy = sizeGrowthRatio(width = 1024,
+                                                    height = 1024,
+                                                    growthRate = 1))
   })
 }
 

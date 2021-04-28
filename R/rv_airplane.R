@@ -15,10 +15,9 @@ rv_create_airplane <- function(risk_ratio = 0.1,
                                risk_places = NULL,
                                risk_vector = NULL,
                                compact = FALSE,
-                               risk_name = "Risk",
+                               risk_names = "Risk",
                                fill = c("coral1", "darkcyan", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
                                na_colour = "grey80",
-                               levels = NULL,
                                rows = 33, 
                                seats_per_row = 6,
                                title = NULL, 
@@ -39,7 +38,7 @@ rv_create_airplane <- function(risk_ratio = 0.1,
   } else {
     risk_places_v <- rv_create_risk_vector(risk_ratio = risk_ratio,
                                            risk_places = risk_places,
-                                           risk_name = risk_name,
+                                           risk_names = risk_names,
                                            total_places = total_places)
   }
   
@@ -116,15 +115,16 @@ rv_create_airplane <- function(risk_ratio = 0.1,
     } 
   } else if (isTRUE(compact)) {
     
-    airplane_gg <- rv_create_airplane_graph_compact(seats = seats_combo,
-                                                    levels = levels,
-                                                    rows = rows,
-                                                    fill = fill,
-                                                    na_colour = na_colour,
-                                                    
-                                                    title = title, 
-                                                    font_family = font_family,
-                                                    legend_position = legend_position)
+    airplane_gg <- rv_create_airplane_compact(risk_ratio = risk_ratio,
+                                              risk_vector = risk_vector,
+                                              risk_names = NULL,
+                                              rows = rows,
+                                              seats_per_row = seats_per_row,
+                                              fill = fill,
+                                              na_colour = na_colour,
+                                              title = title, 
+                                              font_family = font_family,
+                                              legend_position = legend_position)
   }
   
   
@@ -144,7 +144,7 @@ rv_create_airplane <- function(risk_ratio = 0.1,
 #' @param titles 
 #' @param risk_places 
 #' @param risk_vector 
-#' @param risk_name 
+#' @param risk_names 
 #' @param fill 
 #' @param na_colour 
 #' @param rows 
@@ -166,10 +166,9 @@ rv_create_airplane_combo <- function(risk_ratio = 0.1,
                                      risk_places = NULL,
                                      risk_vector = NULL,
                                      compact = FALSE,
-                                     risk_name = "Risk",
+                                     risk_names = NULL,
                                      fill = c("coral1", "darkcyan", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
                                      na_colour = "grey80",
-                                     levels = NULL,
                                      rows = 33, 
                                      seats_per_row = 6,
                                      title = NULL, 
@@ -184,22 +183,17 @@ rv_create_airplane_combo <- function(risk_ratio = 0.1,
   
   v <- rv_create_risk_vector(risk_ratio = risk_ratio,
                              risk_places = risk_places,
-                             risk_name = risk_name,
+                             risk_names = risk_names,
                              total_places = total_places)
   
   rv_l <- split(v, 1:number_of_planes)
   
-  if (is.null(levels)) {
-    levels <- unique(v)
-  }
-  
   plots_l <- purrr::map(.x = rv_l,
                         .f = function(x) {
-                          rv_create_airplane(risk_vector = factor(x = unlist(x), levels = unique(v)),
+                          rv_create_airplane(risk_vector = unlist(x),
                                              fill = fill,
                                              compact = compact,
                                              na_colour = na_colour,
-                                             levels = levels,
                                              rows = rows, 
                                              font_family = font_family,
                                              font_family_seats = font_family_seats, 
@@ -231,7 +225,7 @@ rv_create_airplane_combo <- function(risk_ratio = 0.1,
 #' @param state_length 
 #' @param risk_places 
 #' @param risk_vector 
-#' @param risk_name 
+#' @param risk_names 
 #' @param fill 
 #' @param na_colour 
 #' @param rows 
@@ -252,7 +246,7 @@ rv_create_airplane_animation <- function(risk_ratio = c(`Scenario A` = 0.01, `Sc
                                          state_length = 1,
                                          risk_places = NULL,
                                          risk_vector = NULL,
-                                         risk_name = "Risk",
+                                         risk_names = NULL,
                                          fill = c("coral1", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
                                          na_colour = "grey80",
                                          rows = 33, 
@@ -287,7 +281,7 @@ rv_create_airplane_animation <- function(risk_ratio = c(`Scenario A` = 0.01, `Sc
                                      
                                    })
   }
-
+  
   
   gg_airplane_animated <- rv_create_airplane_graph_compact(seats = seats_combo,
                                                            fill = fill,
