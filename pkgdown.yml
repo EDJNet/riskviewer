@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   introduction: introduction.html
-last_built: 2021-04-28T12:40Z
+last_built: 2021-04-28T12:51Z
 urls:
   reference: https://edjnet.github.io/riskviewer/reference
   article: https://edjnet.github.io/riskviewer/articles
