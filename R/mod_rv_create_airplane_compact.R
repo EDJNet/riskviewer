@@ -24,7 +24,8 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             max = 100,
                             step = 0.1,
                             post = "%",
-                            fgColor = "#ff7256"),
+                            fgColor = "#ff7256",
+                            fontSize = "36px"),
     
     shinyWidgets::knobInput(inputId = NS(id, "risk_02_ratio"),
                             label = "Risk 2",
@@ -33,7 +34,8 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             max = 100,
                             step = 0.1,
                             post = "%",
-                            fgColor = "#008b8b"),
+                            fgColor = "#008b8b",
+                            fontSize = "36px"),
     
     shinyWidgets::knobInput(inputId = NS(id, "risk_03_ratio"),
                             label = "Risk 3",
@@ -42,7 +44,8 @@ mod_rv_create_airplane_compact_ui <- function(id){
                             max = 100,
                             step = 0.1,
                             post = "%",
-                            fgColor = "#ffb90f")
+                            fgColor = "#ffb90f",
+                            fontSize = "36px")
   )
 }
 
