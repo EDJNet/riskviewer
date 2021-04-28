@@ -28,7 +28,9 @@ Imports:
     shades,
     cowplot,
     dplyr,
-    tidyr
+    tidyr,
+    shinyWidgets,
+    tibble
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
@@ -36,6 +38,6 @@ Suggests:
     rmarkdown,
     knitr,
     testthat
-URL: https://edjnet.github.io/riskviewer, https://github.com/giocomai/riskviewer
-BugReports: https://github.com/giocomai/riskviewer/issues
+URL: https://edjnet.github.io/riskviewer, https://github.com/edjnet/riskviewer
+BugReports: https://github.com/edjnet/riskviewer/issues
 VignetteBuilder: knitr

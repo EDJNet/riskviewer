@@ -11,6 +11,7 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+set.seed(seed = 2021)
 library("ggplot2")
 theme_set(theme_minimal() +
             theme(text = ggplot2::element_text(family = "Roboto Condensed")))

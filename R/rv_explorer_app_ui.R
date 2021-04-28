@@ -4,13 +4,23 @@
 #'     DO NOT REMOVE.
 #' @import shiny
 #' @noRd
-app_ui <- function(request) {
+rv_explorer_app_ui <- function(request) {
   tagList(
-    # Leave this function for adding external resources
+    
     golem_add_external_resources(),
-    # List the first level UI elements here 
-    fluidPage(
-      h1("riskviewer")
+    
+    fluidPage(shiny::titlePanel(title = tags$a("Riskviewer explorer - A tool by EDJNet", href='https://github.com/EDJNet/riskviewer'),
+                                          windowTitle = "Riskviewer explorer - A tool by EDJNet"),
+      shiny::sidebarLayout(sidebarPanel = sidebarPanel(
+        mod_rv_create_airplane_compact_ui("rv_create_compact_airplane_1"),
+        shiny::hr(),
+        shiny::h4(tags$a("Find out more about this approach for visualising risk", href='https://edjnet.github.io/riskviewer/articles/introduction.html')),
+        width = 2),
+      mainPanel = mainPanel({
+        
+        plotOutput(outputId = "airplane_gg", height = 1024)
+        
+      }))
     )
   )
 }
