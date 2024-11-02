@@ -53,14 +53,6 @@ rv_create_airplane_combo(
 
 \item{titles}{}
 }
-\value{
-
-}
 \description{
 Spread the risk among more planes
-}
-\examples{
-
-
-
 }

@@ -32,9 +32,6 @@ rv_create_airplane_compact(
 
 \item{legend_position}{}
 }
-\value{
-
-}
 \description{
 Create a compact airplane
 }

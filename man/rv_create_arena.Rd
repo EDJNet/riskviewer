@@ -21,9 +21,6 @@ rv_create_arena(
 
 \item{ggplot}{Logical, defaults to FALSE. If TRUE, returns a `ggplot` object. If FALSE, a `magick` object.}
 }
-\value{
-
-}
 \description{
 Create an arena with a given ratio of places highlighted
 }

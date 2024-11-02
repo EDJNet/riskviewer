@@ -52,88 +52,94 @@ At this stage, this package provides two formats for representing risk.
 ``` r
 library("riskviewer")
 library("patchwork")
-plane_1 <- rv_create_airplane(risk_ratio = 0.1,
-                              rows = 33,
-                              title = "Scenario A",
-                              font_family = "Roboto Condensed",
-                              font_family_seats = "Roboto Mono") 
+plane_1 <- rv_create_airplane(
+  risk_ratio = 0.1,
+  rows = 33,
+  title = "Scenario A",
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono"
+)
 
-plane_2 <- rv_create_airplane(risk_ratio = 0.3,
-                              rows = 33,
-                              title = "Scenario B",
-                              font_family = "Roboto Condensed",
-                              font_family_seats = "Roboto Mono") 
+plane_2 <- rv_create_airplane(
+  risk_ratio = 0.3,
+  rows = 33,
+  title = "Scenario B",
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono"
+)
 
-plane_1 + plane_2 
-#> Warning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in
-#> ggplot2 3.3.4.
-#> ℹ Please use "none" instead.
-#> ℹ The deprecated feature was likely used in the riskviewer package.
-#>   Please report the issue at <https://github.com/edjnet/riskviewer/issues>.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
+plane_1 + plane_2
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-airplane_example_AB-1.png" width="100%" style="display: block; margin: auto;" />
 
 If more than one airplane is needed:
 
 ``` r
-
-rv_create_airplane_combo(risk_ratio = 0.01,
-                         number_of_planes = 3,
-                         font_family = "Roboto Condensed",
-                         font_family_seats = "Roboto Mono", guides = NULL)
+rv_create_airplane_combo(
+  risk_ratio = 0.01,
+  number_of_planes = 3,
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono", guides = NULL
+)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-airplane_example_combo-1.png" width="100%" style="display: block; margin: auto;" />
 
 ``` r
-
-rv_create_airplane_combo(risk_ratio = 0.001,
-                         number_of_planes = 5,
-                         font_family = "Roboto Condensed",
-                         font_family_seats = "Roboto Mono",
-                         legend_position = "none",
-                         ncol = 3,
-                         nrow = 2, guides = NULL)
+rv_create_airplane_combo(
+  risk_ratio = 0.001,
+  number_of_planes = 5,
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono",
+  legend_position = "none",
+  ncol = 3,
+  nrow = 2, guides = NULL
+)
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-airplane_example_2-1.png" width="100%" style="display: block; margin: auto;" />
 
 Or, using more than one risk consideration:
 
 ``` r
-risk_ratio <- tibble::tribble(~Risk, ~Ratio,
-                                       "Hospitalization", 0.3,
-                                       "Death", 0.1)
+risk_ratio <- tibble::tribble(
+  ~Risk, ~Ratio,
+  "Hospitalization", 0.3,
+  "Death", 0.1
+)
 
-combo_gg <- rv_create_airplane_combo(risk_ratio = risk_ratio,
-                         number_of_planes = 2,
-                         font_family = "Roboto Condensed",
-                         font_family_seats = "Roboto Mono", 
-                         legend_position = "bottom",
-                         guides = "collect")
+combo_gg <- rv_create_airplane_combo(
+  risk_ratio = risk_ratio,
+  number_of_planes = 2,
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono",
+  legend_position = "bottom",
+  guides = "collect"
+)
 
 
 combo_gg +
-  patchwork::plot_annotation(title = "Risk caused by x for people aged xx",caption = 'Made with `riskviewer`, a tool by EDJNet',
-    theme = ggplot2::theme(plot.title = ggplot2::element_text(size = 24, family = "Roboto Condensed", hjust = 0.5)))
+  patchwork::plot_annotation(
+    title = "Risk caused by x for people aged xx", caption = "Made with `riskviewer`, a tool by EDJNet",
+    theme = ggplot2::theme(plot.title = ggplot2::element_text(size = 24, family = "Roboto Condensed", hjust = 0.5))
+  )
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-airplane_example_more-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## Compact airplane
 
 ``` r
-combo_gg <- rv_create_airplane_combo(risk_ratio = risk_ratio,
-                         number_of_planes = 2,
-                         font_family = "Roboto Condensed",
-                         font_family_seats = "Roboto Mono", 
-                         legend_position = "bottom",
-                         guides = "collect",
-                         compact = TRUE)
+combo_gg <- rv_create_airplane_combo(
+  risk_ratio = risk_ratio,
+  number_of_planes = 2,
+  font_family = "Roboto Condensed",
+  font_family_seats = "Roboto Mono",
+  legend_position = "bottom",
+  guides = "collect",
+  compact = TRUE
+)
 
 combo_gg
 #> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
@@ -147,17 +153,20 @@ combo_gg
 The compact format makes it easier to have many planes:
 
 ``` r
-
-rv_create_airplane_combo(risk_ratio = 0.002,
-                         number_of_planes = 10,
-                         compact = TRUE,
-                         font_family = "Roboto Condensed",
-                         legend_position = "none",
-                         ncol = 5,
-                         nrow = 2,
-                         guides = NULL) +
-  patchwork::plot_annotation(title = "This risk hits about 2 people out of one thousand",caption = 'Made with `riskviewer`, a tool by EDJNet',
-    theme = ggplot2::theme(plot.title = ggplot2::element_text(size = 16, family = "Roboto Condensed", hjust = 0.5)))
+rv_create_airplane_combo(
+  risk_ratio = 0.002,
+  number_of_planes = 10,
+  compact = TRUE,
+  font_family = "Roboto Condensed",
+  legend_position = "none",
+  ncol = 5,
+  nrow = 2,
+  guides = NULL
+) +
+  patchwork::plot_annotation(
+    title = "This risk hits about 2 people out of one thousand", caption = "Made with `riskviewer`, a tool by EDJNet",
+    theme = ggplot2::theme(plot.title = ggplot2::element_text(size = 16, family = "Roboto Condensed", hjust = 0.5))
+  )
 #> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
 #>   Consider 'structure(list(), *)' instead.
 #> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
@@ -187,23 +196,27 @@ rv_create_airplane_combo(risk_ratio = 0.002,
 (currently broken)
 
 ``` r
-gg_airplane_animated <- tibble::tribble(~Risk, ~Ratio,
-                "Age 20", 0.009,
-                "Age 30", 0.027,
-                "Age 40", 0.048,
-                "Age 50", 0.085,
-                "Age 60", 0.155,
-                "Age 70", 0.244,
-                "Age 80", 0.317) %>%
+gg_airplane_animated <- tibble::tribble(
+  ~Risk, ~Ratio,
+  "Age 20", 0.009,
+  "Age 30", 0.027,
+  "Age 40", 0.048,
+  "Age 50", 0.085,
+  "Age 60", 0.155,
+  "Age 70", 0.244,
+  "Age 80", 0.317
+) %>%
   rv_create_airplane_animation(title = "Risk 1")
-  
 
-gganimate::animate(plot = gg_airplane_animated,
-  #renderer = gganimate::ffmpeg_renderer(),
-                   height = 8,
-                   width = 2,
-                   units = "in",
-                   res = 150)
+
+gganimate::animate(
+  plot = gg_airplane_animated,
+  # renderer = gganimate::ffmpeg_renderer(),
+  height = 8,
+  width = 2,
+  units = "in",
+  res = 150
+)
 ```
 
 ### Arena
@@ -214,45 +227,50 @@ the graph, and leaving the top half empty.
 
 ``` r
 library("riskviewer")
-rv_create_arena(ratio = 0.05,
-                title = "The risk you face",
-                ggplot = FALSE,
-                quality = "low")
+rv_create_arena(
+  ratio = 0.05,
+  title = "The risk you face",
+  ggplot = FALSE,
+  quality = "low"
+)
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+<img src="man/figures/README-arena005-1.png" width="100%" />
 
 ``` r
 library("riskviewer")
 rv_create_arena(ratio = 0.3, ggplot = TRUE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-arena03-1.png" width="100%" />
 
 ## Combine more
 
 ``` r
-graphs <- list(rv_create_arena(ratio = 0.1, title = "Scenario A", ggplot = TRUE),
-               rv_create_arena(ratio = 0.8, title = "Scenario B", ggplot = TRUE))
+graphs <- list(
+  rv_create_arena(ratio = 0.1, title = "Scenario A", ggplot = TRUE),
+  rv_create_arena(ratio = 0.8, title = "Scenario B", ggplot = TRUE)
+)
 
 rv_img(plot = graphs, stack = TRUE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
+<img src="man/figures/README-arena_combo-1.png" width="100%" />
 
 ``` r
 rv_img(plot = graphs, stack = FALSE)
 ```
 
-<img src="man/figures/README-unnamed-chunk-10-1.png" width="100%" />
+<img src="man/figures/README-arena_combo_no_stack-1.png" width="100%" />
 
 ## Export in other formats
 
 ``` r
-
-ggplot2::ggsave(filename = "risk_arena.svg",
-                plot = rv_create_arena(ratio = 0.1, ggplot = TRUE),
-                width = 10,
-                height = 10,
-                units = "in")
+ggplot2::ggsave(
+  filename = "risk_arena.svg",
+  plot = rv_create_arena(ratio = 0.1, ggplot = TRUE),
+  width = 10,
+  height = 10,
+  units = "in"
+)
 ```

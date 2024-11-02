@@ -15,9 +15,6 @@ rv_img(plot, quality = "low", bg = "white", stack = FALSE)
 
 \item{stack}{Logical, defaults to FALSE. If TRUE, graphs are placed left-to-right, if FALSE top-to-bottom.}
 }
-\value{
-
-}
 \description{
 Converts output to an image object in standard formats.
 }

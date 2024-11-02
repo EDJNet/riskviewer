@@ -1,18 +1,18 @@
 #' Create an arena with a given ratio of places highlighted
 #'
-#' @param ratio Numeric, between 0 and 1, required. Share of seats to colour. 
-#' @param ggplot Logical, defaults to FALSE. If TRUE, returns a `ggplot` object. If FALSE, a `magick` object. 
+#' @param ratio Numeric, between 0 and 1, required. Share of seats to colour.
+#' @param ggplot Logical, defaults to FALSE. If TRUE, returns a `ggplot` object. If FALSE, a `magick` object.
 #' @param bg Character vector of lenght 1, defines the background colour of the plot. Defaults to "white".
 #'
 #' @return
 #' @export
 #'
 #' @examples
-#' 
+#'
 #' rv_create_arena(ratio = 0.9)
-#' 
+#'
 #' rv_create_arena(ratio = 0.1)
-#' 
+#'
 rv_create_arena <- function(ratio,
                             title = NULL,
                             subtitle = NULL,
@@ -20,7 +20,6 @@ rv_create_arena <- function(ratio,
                             bg = "white",
                             quality = "low",
                             ggplot = FALSE) {
-
   ## how many seats per row?
   number_of_seats_first_row <- 164
   number_of_rows <- 5
@@ -145,7 +144,7 @@ rv_create_arena <- function(ratio,
     ggplot2::coord_polar(theta = "y", start = pi / 2) +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
-  
+
   platea_gg <- ggplot2::ggplot() +
     ggplot2::geom_point(
       data = seats_platea_gg_data %>%
@@ -173,19 +172,21 @@ rv_create_arena <- function(ratio,
       y = 0.33,
       width = 0.36,
       height = 0.17
-    ) 
+    )
 
-  if (is.null(title)==FALSE) {
+  if (is.null(title) == FALSE) {
     combo_gg <- combo_gg +
-      cowplot::draw_label(label = title, vjust = -0.5)    
+      cowplot::draw_label(label = title, vjust = -0.5)
   }
-  
-  
+
+
   if (ggplot == TRUE) {
     return(combo_gg)
   } else {
-    riskviewer::rv_img(plot = combo_gg,
-                       quality = quality,
-                       bg = bg)
+    riskviewer::rv_img(
+      plot = combo_gg,
+      quality = quality,
+      bg = bg
+    )
   }
 }

@@ -11,9 +11,6 @@ rv_create_airplane_seats(rows = 33, seats_per_row = 6)
 
 \item{seats_per_row}{Numeric, defaults to 6. Untested with anything different from 6.}
 }
-\value{
-
-}
 \description{
 Create a dataframe with seats location and names (used internally)
 }

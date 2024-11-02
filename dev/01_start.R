@@ -13,14 +13,8 @@
 
 ## Fill the DESCRIPTION ----
 ## Add meta data about your application
-golem::fill_desc(
-  pkg_name = "riskviewer", # The Name of the package containing the App 
-  pkg_title = "riskviewer - Show risks and probability in real world contexts", # The Title of the package containing the App 
-  pkg_description = "riskviewer - Show risks and probability in real world contexts", # The Description of the package containing the App 
-  author_first_name = "Giorgio", # Your First Name
-  author_last_name = "Comai", # Your Last Name
-  author_email = "g@giorgiocomai.eu", # Your Email
-  repo_url = "https://github.com/giocomai/riskviewer" # The URL of the GitHub Repo (optional) 
+golem::fill_desc(repo_url = 
+  repo_url = "https://github.com/edjnet/riskviewer" # The URL of the GitHub Repo (optional) 
 )     
 
 ## Set {golem} options ----

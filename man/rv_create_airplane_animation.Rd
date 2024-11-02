@@ -5,8 +5,8 @@
 \title{Create animated version with multiple scenarios}
 \usage{
 rv_create_airplane_animation(
-  risk_ratio = c(`Scenario A` = 0.01, `Scenario B` = 0.1, `Scenario C` = 0.3, `Scenario
-    D` = 0.7),
+  risk_ratio = c(`Scenario A` = 0.01, `Scenario B` = 0.1, `Scenario C` = 0.3,
+    `Scenario D` = 0.7),
   transition_length = 0.5,
   state_length = 1,
   risk_places = NULL,
@@ -57,9 +57,6 @@ rv_create_airplane_animation(
 \item{nrow}{}
 
 \item{guides}{}
-}
-\value{
-
 }
 \description{
 Create animated version with multiple scenarios
