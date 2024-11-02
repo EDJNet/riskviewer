@@ -90,9 +90,9 @@ rv_create_airplane <- function(risk_ratio = 0.1,
       ) +
       ggplot2::scale_fill_manual(values = fill, na.value = na_colour, drop = FALSE) +
       ggplot2::scale_colour_manual(values = shades::lightness(fill, shades::delta(-30)), na.value = shades::lightness(na_colour, shades::delta(-30)), guide = "none", drop = FALSE) +
-      ggplot2::geom_segment(mapping = ggplot2::aes(x = 1, y = -rows - 2, xend = 1, yend = -0.9), size = 3, color = "black", lineend = "round") +
-      ggplot2::geom_segment(mapping = ggplot2::aes(x = 9, y = -rows - 2, xend = 9, yend = -0.9), size = 3, color = "black", lineend = "round") +
-      ggplot2::geom_curve(mapping = ggplot2::aes(x = 1, y = -1, xend = 9, yend = -1), size = 3, color = "black", curvature = -1.1, lineend = "round", ncp = 20) +
+      ggplot2::geom_segment(mapping = ggplot2::aes(x = 1, y = -rows - 2, xend = 1, yend = -0.9), linewidth = 3, color = "black", lineend = "round") +
+      ggplot2::geom_segment(mapping = ggplot2::aes(x = 9, y = -rows - 2, xend = 9, yend = -0.9), linewidth = 3, color = "black", lineend = "round") +
+      ggplot2::geom_curve(mapping = ggplot2::aes(x = 1, y = -1, xend = 9, yend = -1), linewidth = 3, color = "black", curvature = -1.1, lineend = "round", ncp = 20) +
       ggplot2::scale_y_continuous(
         name = "",
         limits = c(-rows - 2, 3.5),
