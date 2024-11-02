@@ -17,9 +17,9 @@ Risks](https://link.springer.com/book/10.1007/978-0-387-48572-0)”.
 
 ## Why is this useful?
 
-  - uncertainty, embedded
-  - instinctive understanding of risk assessment figures based on
-    real-world-scenarios
+- uncertainty, embedded
+- instinctive understanding of risk assessment figures based on
+  real-world-scenarios
 
 More context in the package vignette.
 
@@ -40,7 +40,7 @@ You can install `riskviewer` from
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("EDJNet/riskviewer)
+remotes::install_github("EDJNet/riskviewer")
 ```
 
 ## Examples
@@ -65,6 +65,14 @@ plane_2 <- rv_create_airplane(risk_ratio = 0.3,
                               font_family_seats = "Roboto Mono") 
 
 plane_1 + plane_2 
+#> Warning: The `guide` argument in `scale_*()` cannot be `FALSE`. This was deprecated in
+#> ggplot2 3.3.4.
+#> ℹ Please use "none" instead.
+#> ℹ The deprecated feature was likely used in the riskviewer package.
+#>   Please report the issue at <https://github.com/edjnet/riskviewer/issues>.
+#> This warning is displayed once every 8 hours.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" style="display: block; margin: auto;" />
@@ -128,6 +136,10 @@ combo_gg <- rv_create_airplane_combo(risk_ratio = risk_ratio,
                          compact = TRUE)
 
 combo_gg
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
 ```
 
 <img src="man/figures/README-compact_one-1.png" width="100%" />
@@ -146,6 +158,26 @@ rv_create_airplane_combo(risk_ratio = 0.002,
                          guides = NULL) +
   patchwork::plot_annotation(title = "This risk hits about 2 people out of one thousand",caption = 'Made with `riskviewer`, a tool by EDJNet',
     theme = ggplot2::theme(plot.title = ggplot2::element_text(size = 16, family = "Roboto Condensed", hjust = 0.5)))
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
+#> Warning in structure(in_domain, pos = match(in_domain, breaks)): Calling 'structure(NULL, *)' is deprecated, as NULL cannot have attributes.
+#>   Consider 'structure(list(), *)' instead.
 ```
 
 <img src="man/figures/README-compact_many-1.png" width="100%" style="display: block; margin: auto;" />
