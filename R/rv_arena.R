@@ -140,7 +140,7 @@ rv_create_arena <- function(ratio,
     ) +
     ggplot2::scale_x_continuous(limits = c(0, sum(5.5, number_of_rows))) +
     ggplot2::scale_y_continuous(limits = c(0, 202)) +
-    ggplot2::scale_colour_manual(values = c("grey80", "coral4")) +
+    ggplot2::scale_colour_manual(values = c("grey90", "coral4")) +
     ggplot2::coord_polar(theta = "y", start = pi / 2) +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
@@ -159,7 +159,7 @@ rv_create_arena <- function(ratio,
         colour = risk_places
       ), size = 0.3
     ) +
-    ggplot2::scale_colour_manual(values = c("grey80", "coral4")) +
+    ggplot2::scale_colour_manual(values = c("grey90", "coral4")) +
     ggplot2::theme_void() +
     ggplot2::theme(legend.position = "none")
 

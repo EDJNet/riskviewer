@@ -29,9 +29,8 @@ The package has been created as a quick experimentation of how it would
 be possible to implement the risk characterisation theatre. At this
 stage, the codebase is still messy and poorly documented. Customisation
 of parameters is largely untested, so anything differing significantly
-from the examples documented in the README and vignette will likley not
-work. The package will however be improved in the coming weeks and
-months.
+from the examples documented in the README and vignette will likely not
+work.
 
 ## Installation
 

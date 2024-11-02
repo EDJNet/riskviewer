@@ -11,7 +11,7 @@ test_that("order of colors is kept", {
   rv_create_airplane_compact(
     risk_ratio = risk_ratio,
     fill = c("green", "blue", "red", "pink"),
-    na_colour = "grey80"
+    na_colour = "grey90"
   )
 })
 
@@ -33,7 +33,7 @@ test_that("multiplication works", {
   # rows = 33
   # seats_per_row = 6
   # fill = c("green", "blue", "red", "pink")
-  # na_colour = "grey80"
+  # na_colour = "grey90"
   # title = NULL
   # font_family = "sans"
   # legend_position = "none"

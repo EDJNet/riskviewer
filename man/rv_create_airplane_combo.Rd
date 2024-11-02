@@ -12,7 +12,7 @@ rv_create_airplane_combo(
   compact = FALSE,
   risk_names = NULL,
   fill = c("coral1", "darkcyan", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
-  na_colour = "grey80",
+  na_colour = "grey90",
   rows = 33,
   seats_per_row = 6,
   title = NULL,
