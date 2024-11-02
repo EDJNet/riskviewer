@@ -37,6 +37,35 @@ More context in the package vignette.
 
 The package has been created as a quick experimentation of how it would be possible to implement the risk characterisation theatre. At this stage, the codebase is still messy and poorly documented. Customisation of parameters is largely untested, so anything differing significantly from the examples documented in the README and vignette will likely not work.
 
+### Common issues
+
+The output really works only when exported at suitable sizes. For example, for a basic combination of two airplanes such as the first example in this readme, export with width set 12 and height set to 14 and you'll get the expected result. E.g. based on the example below:
+
+```{r example_export, eval = FALSE}
+
+plane_1 + plane_2
+
+ggplot2::ggsave(filename = "plane_combo.png",
+                plot = plane_1 + plane_2,
+                width = 12,
+                height = 14,
+                bg = "white")
+
+```
+
+
+Beware of fonts: if you don't have either "Roboto Condensed" or "Roboto Mono" installed and available in R, the output will probably just look completely wrong. You can either try with other fonts, or use default fonts: defaults fonts should work (or at least, they do on my computer), even if the look less satisfying. 
+
+In order to check if a given font is available, try:
+
+```{r font checks, eval = FALSE}
+library("extrafont")
+#extrafont::font_import()
+"Roboto Condensed" %in% fonts()
+"Roboto Mono" %in% fonts()
+
+```
+
 ## Installation
 
 You can install `riskviewer` from [GitHub](https://github.com/EDJNet/riskviewer) with:
@@ -227,11 +256,11 @@ graphs <- list(
   rv_create_arena(ratio = 0.8, title = "Scenario B", ggplot = TRUE)
 )
 
-rv_img(plot = graphs, stack = TRUE)
+rv_img(plot = graphs, stack = TRUE, quality = "medium")
 ```
 
 ```{r arena_combo_no_stack}
-rv_img(plot = graphs, stack = FALSE)
+rv_img(plot = graphs, stack = FALSE, quality = "medium")
 ```
 
 
