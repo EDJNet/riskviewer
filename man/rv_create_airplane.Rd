@@ -24,18 +24,17 @@ rv_create_airplane(
 )
 }
 \arguments{
+\item{risk_ratio}{Fraction of places that are subject to risk. For example, if set to 0.1 (the default), 10% of places will be considered subject to risk.}
+
 \item{risk_places}{Number of risk places, defaults to NULL. If given, takes precedence over ratio.}
 
 \item{fill}{A vector of colours.}
 
-\item{rows}{Number of rows, defaults to 33 (found in commercial airplans, and with 6 seats per rows it adds up to 198 seats in total).}
+\item{rows}{Number of rows, defaults to 33 (found in commercial airplanes, and with 6 seats per rows it adds up to 198 seats in total).}
 
 \item{legend_position}{Defaults to "none".}
 
-\item{coord_ratio}{Numeric, defaults to 0.5, untested with anything else. Y/X ratio.}
-}
-\value{
-
+\item{coord_ratio}{Numeric, defaults to 0.8, untested with anything else. Y/X ratio.}
 }
 \description{
 Create risk airplane

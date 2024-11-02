@@ -1,11 +1,11 @@
 #' Create risk airplane
 #'
-#' @param rows Number of rows, defaults to 33 (found in commercial airplans, and with 6 seats per rows it adds up to 198 seats in total).
+#' @param rows Number of rows, defaults to 33 (found in commercial airplanes, and with 6 seats per rows it adds up to 198 seats in total).
+#' @param risk_ratio Fraction of places that are subject to risk. For example, if set to 0.1 (the default), 10% of places will be considered subject to risk.
 #' @param risk_places Number of risk places, defaults to NULL. If given, takes precedence over ratio.
-#' @param  
 #' @param legend_position Defaults to "none". 
 #' @param fill A vector of colours. 
-#' @param coord_ratio Numeric, defaults to 0.5, untested with anything else. Y/X ratio. 
+#' @param coord_ratio Numeric, defaults to 0.8, untested with anything else. Y/X ratio. 
 #'
 #' @return
 #' @export
@@ -82,7 +82,7 @@ rv_create_airplane <- function(risk_ratio = 0.1,
         family=font_family_seats, 
         fill = "white") +
       ggplot2::scale_fill_manual(values = fill, na.value = na_colour, na.translate = FALSE, drop = FALSE) +
-      ggplot2::scale_colour_manual(values = shades::lightness(fill, shades::delta(-30)), na.value = shades::lightness(na_colour, shades::delta(-30)), guide = FALSE, drop = FALSE) +
+      ggplot2::scale_colour_manual(values = shades::lightness(fill, shades::delta(-30)), na.value = shades::lightness(na_colour, shades::delta(-30)), guide = "none", drop = FALSE) +
       ggplot2::geom_segment(mapping = ggplot2::aes(x = 1, y = -rows-2, xend = 1, yend = -0.9), size = 3, color = "black", lineend = "round") +
       ggplot2::geom_segment(mapping = ggplot2::aes(x = 9, y = -rows-2, xend = 9, yend = -0.9), size = 3, color = "black", lineend = "round") +
       ggplot2::geom_curve(mapping = ggplot2::aes(x = 1, y = -1, xend = 9, yend =-1), size = 3, color = "black", curvature = -1.1, lineend = "round", ncp = 20) +
