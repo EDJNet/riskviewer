@@ -17,7 +17,7 @@ rv_create_airplane <- function(risk_ratio = 0.1,
                                compact = FALSE,
                                risk_names = "Risk",
                                fill = c("coral1", "darkcyan", "darkgoldenrod1", "darkseagreen1", "lightskyblue1"),
-                               na_colour = "grey80",
+                               na_colour = "grey90",
                                rows = 33,
                                seats_per_row = 6,
                                title = NULL,
@@ -88,7 +88,7 @@ rv_create_airplane <- function(risk_ratio = 0.1,
         family = font_family_seats,
         fill = "white"
       ) +
-      ggplot2::scale_fill_manual(values = fill, na.value = na_colour, na.translate = FALSE, drop = FALSE) +
+      ggplot2::scale_fill_manual(values = fill, na.value = na_colour, drop = FALSE) +
       ggplot2::scale_colour_manual(values = shades::lightness(fill, shades::delta(-30)), na.value = shades::lightness(na_colour, shades::delta(-30)), guide = "none", drop = FALSE) +
       ggplot2::geom_segment(mapping = ggplot2::aes(x = 1, y = -rows - 2, xend = 1, yend = -0.9), size = 3, color = "black", lineend = "round") +
       ggplot2::geom_segment(mapping = ggplot2::aes(x = 9, y = -rows - 2, xend = 9, yend = -0.9), size = 3, color = "black", lineend = "round") +
