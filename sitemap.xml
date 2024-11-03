@@ -1,39 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/index.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_animation.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_combo.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_compact.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_seats.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_arena.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_create_risk_vector.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_explorer.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/reference/rv_img.html</loc>
-  </url>
-  <url>
-    <loc>https://edjnet.github.io/riskviewer/articles/introduction.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://edjnet.github.io/riskviewer/404.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/LICENSE.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/articles/index.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/articles/introduction.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/authors.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/index.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/news/index.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/index.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/pipe.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_animation.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_combo.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_compact.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_airplane_seats.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_arena.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_create_risk_vector.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_explorer.html</loc></url>
+<url><loc>https://edjnet.github.io/riskviewer/reference/rv_img.html</loc></url>
 </urlset>
+
