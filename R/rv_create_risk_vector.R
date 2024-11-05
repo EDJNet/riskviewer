@@ -89,6 +89,10 @@ rv_create_risk_vector <- function(risk_ratio,
     risk_places_v <- rep(as.character(NA), total_places)
 
     for (i in (unique(risk_ratio[[1]])[is.na(unique(risk_ratio[[1]])) == FALSE])) {
+      if (sum(is.na(risk_places_v))==0) {
+        break
+      }
+      
       selector <- sample(
         x = seq_along(risk_places_v[is.na(risk_places_v) == TRUE]),
         replace = FALSE,
