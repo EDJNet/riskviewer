@@ -20,15 +20,7 @@ rv_create_airplane_compact(
 \arguments{
 \item{risk_vector}{A character vector of length equal to the number of seats (rows*seats_per_row)}
 
-\item{rows}{}
-
 \item{fill}{A character vector of colours.}
-
-\item{na_colour}{}
-
-\item{title}{}
-
-\item{font_family}{}
 
 \item{legend_position}{}
 }

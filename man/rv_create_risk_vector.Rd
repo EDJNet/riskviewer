@@ -29,24 +29,33 @@ Create risk vector based on ratio, number of places, or data frame
 \examples{
 
 
-rv_create_risk_vector(risk_ratio = 0.1,
-                      total_places = 100)
+rv_create_risk_vector(
+  risk_ratio = 0.1,
+  total_places = 100
+)
 table(
-  rv_create_risk_vector(risk_ratio = 0.1,
-                        total_places = 100) 
+  rv_create_risk_vector(
+    risk_ratio = 0.1,
+    total_places = 100
+  )
 )
 
-ratio <- tibble::tribble(~Risk, ~Ratio,
-                         "Hospitalization", 0.3,
-                         "Death", 0.1)
-
-rv_create_risk_vector(risk_ratio = ratio,
-                      total_places = 100)
-
-table(
-  rv_create_risk_vector(risk_ratio = ratio,
-                        total_places = 100)
+ratio <- tibble::tribble(
+  ~Risk, ~Ratio,
+  "Hospitalization", 0.3,
+  "Death", 0.1
 )
 
+rv_create_risk_vector(
+  risk_ratio = ratio,
+  total_places = 100
+)
+
+table(
+  rv_create_risk_vector(
+    risk_ratio = ratio,
+    total_places = 100
+  )
+)
 
 }

@@ -25,33 +25,9 @@ rv_create_airplane_combo(
 )
 }
 \arguments{
-\item{risk_ratio}{}
-
-\item{number_of_planes}{}
-
-\item{risk_places}{}
-
-\item{risk_vector}{}
-
-\item{risk_names}{}
-
-\item{fill}{}
-
-\item{na_colour}{}
-
-\item{rows}{}
-
 \item{seats_per_row}{Defaults to 6. Untested with anything different from 6.}
 
-\item{title}{}
-
-\item{font_family}{}
-
-\item{font_family_seats}{}
-
 \item{legend_position}{}
-
-\item{titles}{}
 }
 \description{
 Spread the risk among more planes
